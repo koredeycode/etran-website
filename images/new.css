@@ -1,0 +1,71 @@
+:root {
+  --primary-green: #3D4F00; /* The dark olive color for the sidebar */
+  --light-green: #C9EF73;  /* The bright accent/background color */
+  --text-dark: #333;
+  --text-light: #fff;
+}
+
+/* Reset to make padding/border included in the element's total width/height */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, sans-serif; /* Replace with the actual font */
+  color: var(--text-dark);
+}
+
+/* The main container for the entire page content */
+.page-wrapper {
+  display: grid;
+  /* Define the columns: 
+     e.g., a fixed width for the sidebar, and 1 fraction (1fr) for the content */
+  grid-template-columns: 350px 1fr; /* Adjust the 350px as needed */
+  min-height: 100vh; /* Ensure it takes at least the full viewport height */
+}
+
+/* Style the fixed sidebar */
+.sidebar {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  padding: 20px;
+}
+
+/* Style the main content area */
+.main-content {
+  background-color: #fff; /* or whatever background color it has */
+}
+
+.sidebar-info-section {
+  display: flex;
+  flex-wrap: wrap; /* Allows the four boxes to wrap */
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.info-box {
+  width: 48%; /* To get two boxes per row with a small gap */
+  height: 80px;
+  border: 1px solid var(--light-green);
+  /* Use Flexbox here to center the icon/text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+  gap: 20px; /* Space between the boxes */
+  padding: 40px;
+  margin: 40px 0;
+}
+
+.stat-box {
+  background-color: var(--light-green);
+  border-radius: 15px; /* Has rounded corners */
+  padding: 20px;
+}

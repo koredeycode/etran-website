@@ -1,0 +1,591 @@
+/* --- Global Styles and Variables --- */
+:root {
+  --primary-green: #3D4F00; /* Dark olive color */
+  --light-green: #C9EF73;  /* Bright accent color */
+  --text-dark: #333;
+  --text-light: #fff;
+  --max-sidebar-width: 350px; /* Width of the dark column */
+}
+
+/* A standard CSS reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-weight: lighter;
+    color: var(--text-dark);
+}
+
+/* --- Main Layout: CSS GRID --- */
+
+.page-wrapper {
+  display: grid;
+  /* Define two columns: 
+     1. A fixed width for the sidebar (e.g., 350px) 
+     2. The rest of the space (1fr) for the main content */
+  grid-template-columns: var(--max-sidebar-width) 1fr;
+  /* Ensure the entire layout stretches to fill the screen vertically */
+  min-height: 100vh; 
+}
+
+/* --- Sidebar Styling --- */
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 0px;
+}
+nav button {
+padding: 11px 14px;
+gap: 10px;
+font-size: 9px;
+color: #394508;
+width: 85px;
+height: 34px;
+border: none;
+background: #D2FD9C;
+border-radius: 2.06373px;
+cursor: pointer;
+}
+header h1{
+font-size: 38px;
+font-weight: lighter;
+color: #FFFFFF;
+font-family: Helvetica, sans-serif;
+}
+span {
+color: #D2FD9C;
+}
+header p{
+font-size: 12px;
+font-weight: lighter;
+color: #FFFFFF;
+margin-bottom: 40px;
+font-family: Helvetica, sans-serif;
+}
+aside .one{
+font-size: 12px;
+color: #D2FD9C;
+margin-bottom: 10px;
+font-family: Helvetica, sans-serif;
+}
+.sidebar {
+  /* Set the fixed color for the sidebar */
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  padding-top: 40px; 
+  padding-right: 50px;
+  padding-left: 15px;/* Add some space inside the sidebar */
+}
+
+/* You may want the sidebar to always be visible even if the main content scrolls */
+/* If you want a truly fixed sidebar, you'd use a different approach 
+   like 'position: fixed;' but for this page layout, the Grid solution is often better. */
+
+
+/* --- Main Content Styling --- */
+
+.main-content {
+  /* This column will scroll naturally as content is added */
+  padding: 0 0 50px 0; /* Add padding to the bottom for the footer */
+  overflow-y: auto; /* Allows the content to scroll if it exceeds the screen height */
+}
+
+
+/* --- Sidebar Info Boxes Styling --- */
+
+/* 1. Container: Use Flexbox to manage the 2x2 layout */
+.sidebar-info-section {
+  display: flex;
+  flex-wrap: wrap; /* Allows the boxes to wrap to the next line */
+  justify-content: space-between; /* Puts space between the two columns */
+  margin-top: 40px; /* Space below the main header/button */
+}
+
+/* 2. Individual Box Styling */
+.info-box {
+  /* Calculate width: slightly less than 50% to account for margin/padding */
+  width: 48%; 
+  padding: 10px 15px;
+  height: 80px; /* Give them a fixed height to make them square/uniform */
+  
+  /* The key visual: a thin border using the light accent color */
+  border: 1px solid var(--light-green);
+  border-radius: 5px; /* Slight rounding on corners */
+  margin-bottom: 10px; /* Space between the rows */
+
+  /* Center the content (icon and text) inside each box */
+  display: flex;
+  flex-direction: column; /* Stacks the icon above the text */
+  justify-content: center;
+  align-items: center;
+  
+  /* Example text styling */
+  font-size: 0.9em;
+  text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+ul{
+    list-style: none;
+    padding: 0;}
+li{
+    display: inline;
+    margin-right: 15px;
+    font-size: 10px;
+    
+    font-family: Helvetica, sans-serif;
+}
+.info-box img{
+    background-color: #D2FD9C;
+    border-radius: 50%;
+    padding: 4px;
+    margin-top: 0px;
+    width: 24px;
+}
+.info-box p{
+    font-size: 8px;
+    font-family: helvetica;
+}
+.hero-section img{
+    display: block;
+    margin: auto;
+    max-width: 100%; /* Make images responsive */
+    height: auto;
+}
+
+.main-info-section {
+  display: flex;
+  flex-wrap: wrap; /* Allows the boxes to wrap to the next line */
+  justify-content: space-between; /* Puts space between the two columns */
+  margin: 40px 90px; /* Space below the main header/button */
+}
+
+/* 2. Individual Box Styling */
+.main-box {
+  /* Calculate width: slightly less than 50% to account for margin/padding */
+  width: 48%; 
+  background-color: #D2FD9C;
+  height: 220px;/* Give them a fixed height to make them square/uniform */
+  padding : 20px 30px;
+  /* The key visual: a thin border using the light accent color */
+  border: 1px solid var(--light-green);
+  border-radius: 5px; /* Slight rounding on corners */
+  margin-bottom: 30px; /* Space between the rows */
+
+  /* Center the content (icon and text) inside each box */
+  display: flex;
+  flex-direction: column; /* Stacks the icon above the text */
+  justify-content: center;
+  align-items: center;
+  
+  /* Example text styling */
+  font-size: 0.9em;
+  text-align: center;
+}
+.hero-section h1{
+    font-size: 56px;
+    font-weight: lighter;
+    color: #394508;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 60px;
+}
+.hero-section p{
+    font-size: 15px;
+    font-weight: lighter;
+    color: #394508;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 9px;
+}
+.main-box span {
+color: #394508;
+font-size: 60px;
+font-weight: bolder;
+font-family: helvetica;
+}
+
+.app-box {
+  /* Calculate width: slightly less than 50% to account for margin/padding */
+  width: 48%; 
+ 
+  padding : 20px 35px;
+  margin-bottom: 10px; /* Space between the rows */
+
+  /* Center the content (icon and text) inside each box */
+  display: flex;
+  flex-direction: column; /* Stacks the icon above the text */
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+}
+.app-box img{
+    width: 100%;
+    height: auto; /* Responsive height */
+    margin-bottom: 15px;
+}
+.app-box p {
+color: #394508;
+font-size: 12px;
+text-align: left;
+font-family: helvetica;
+}
+.app-box span {
+color: black;
+font-size: 12px;
+text-align: left;
+font-family: helvetica;
+}
+.img-section img{
+    display: block;
+    margin: auto;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 80%; /* Limit on desktop */
+    height: auto;
+    padding: 30px 30px;
+}
+.img-section {
+  margin: 40px;
+}
+.icon-box {
+  /* Calculate width: slightly less than 50% to account for margin/padding */
+  width: 25%; 
+ 
+  /*padding : 20px 35px; */
+  margin-bottom: 10px; /* Space between the rows */
+
+  /* Center the content (icon and text) inside each box */
+  display: flex;
+  flex-direction: column; /* Stacks the icon above the text */
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+.img2-section {
+    display: block;
+    margin: 50px auto;
+    width: 750px;
+    height: 350px;
+    padding: 50px 50px;
+    background-image: url("images/CTA content-2.png");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+footer{
+  background-color: rgb(221, 248, 224);
+  padding: 60px 0px;
+}
+.footer-info-section{
+  display: flex;
+width: 80%;
+margin: auto;
+  justify-content: space-between;
+  align-items: flex-start; /* Changed to flex-start for better alignment */
+  text-align: right;
+  margin-bottom: 50px;
+  font-family: Helvetica;
+}
+.footer-info-section a{
+    text-decoration: none;
+    color: black;
+}
+
+/* --- Tablet Responsiveness (768px - 1024px) --- */
+@media (max-width: 1024px) {
+  :root {
+    --max-sidebar-width: 250px; /* Reduce sidebar width for tablets */
+  }
+
+  .page-wrapper {
+    grid-template-columns: var(--max-sidebar-width) 1fr;
+  }
+
+  .sidebar {
+    padding-right: 30px;
+    padding-left: 10px;
+  }
+
+  nav button {
+    width: 70px;
+    height: 30px;
+    font-size: 8px;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  header p {
+    font-size: 11px;
+    margin-bottom: 30px;
+  }
+
+  aside .one {
+    font-size: 11px;
+  }
+
+  .sidebar-info-section {
+    margin-top: 30px;
+  }
+
+  .info-box {
+    width: 48%;
+    height: 70px;
+    padding: 8px 12px;
+    font-size: 0.8em;
+  }
+
+  .info-box img {
+    width: 20px;
+  }
+
+  .info-box p {
+    font-size: 7px;
+  }
+
+  li {
+    font-size: 9px;
+    margin-right: 10px;
+  }
+
+  .main-info-section {
+    margin: 30px 60px;
+  }
+
+  .main-box {
+    width: 48%;
+    height: 180px;
+    padding: 15px 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 48px;
+    margin-top: 50px;
+  }
+
+  .hero-section p {
+    font-size: 14px;
+  }
+
+  .main-box span {
+    font-size: 50px;
+  }
+
+  .app-box {
+    width: 48%;
+    padding: 15px 25px;
+  }
+
+  .app-box p {
+    font-size: 11px;
+  }
+
+  .app-box span {
+    font-size: 11px;
+  }
+
+  .img-section {
+    margin: 30px;
+  }
+
+  .img-section img {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .icon-box {
+    width: 24%;
+  }
+
+  .img2-section {
+    width: 600px;
+    height: 280px;
+    padding: 40px;
+  }
+
+  footer {
+    padding: 50px 0;
+  }
+
+  .footer-info-section {
+    width: 90%;
+  }
+}
+
+/* --- Mobile Responsiveness (<768px) --- */
+@media (max-width: 768px) {
+  .page-wrapper {
+    /* Stack the sidebar and main content vertically */
+    grid-template-columns: 1fr;
+  }
+  
+  /* Give the sidebar some padding for mobile viewing */
+  .sidebar {
+    padding: 20px 15px;
+    width: 100%;
+    text-align: center; /* Center content for better mobile look */
+  }
+
+  nav {
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  nav img {
+    margin-bottom: 10px;
+  }
+
+  nav button {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    font-size: 10px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+
+  aside .one {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .sidebar-info-section {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .info-box {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .info-box img {
+    width: 30px;
+  }
+
+  .info-box p {
+    font-size: 10px;
+  }
+
+  ul {
+    text-align: center;
+  }
+
+  li {
+    display: block;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+
+  .main-content {
+    padding: 20px 15px 40px;
+  }
+
+  .main-info-section {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .main-box {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 36px;
+    margin-top: 40px;
+  }
+
+  .hero-section p {
+    font-size: 13px;
+    br { display: none; } /* Remove line breaks for better flow */
+  }
+
+  .main-box span {
+    font-size: 40px;
+  }
+
+  .app-box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .app-box img {
+    height: auto;
+  }
+
+  .app-box p {
+    font-size: 12px;
+  }
+
+  .app-box span {
+    font-size: 12px;
+  }
+
+  .img-section {
+    margin: 20px 0;
+  }
+
+  .img-section img {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .icon-box {
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .img2-section {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    background-size: contain;
+    background-position: center;
+  }
+
+  footer {
+    padding: 40px 15px;
+  }
+
+  .footer-info-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .footer-box {
+    margin-bottom: 20px;
+  }
+
+  .footer-box p {
+    text-align: center;
+  }
+}
